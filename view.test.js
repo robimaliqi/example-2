@@ -23,4 +23,13 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(4)
   })
+
+  it("clears all the paragraphs", () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const view = new View();
+    view.clearParagraphs();
+
+    expect(document.querySelectorAll('p').length).toBe(0)
+  })
 });
